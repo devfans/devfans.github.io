@@ -43,6 +43,6 @@ coinbasevalue: 1335905154
 
 + Loop ends for this block, and the next loop will start with this valid block as the previous one to make the template of the next block.
 
-So this is idea behind the mining on blockchain. Didn't cover the detailed fields in the process for this short post, but hope it helps you to understand what it is.
+So this is the idea behind the mining on blockchain. Didn't cover the detailed fields in the process for this short post, but hope it helps you to understand what it is in the background.
 
 In addition, I am not a native English speaker, just trying to get used with writing posts in it.
