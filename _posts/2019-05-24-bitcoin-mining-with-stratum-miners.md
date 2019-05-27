@@ -20,6 +20,7 @@ Here to explain the steps in one typical bitcoin mining loop.
 ```
 Sample block template:
 version: 536870912,
+previousblockhash: 00000000000000000007d0a09fd100e79d95e5af3310bd4398d5e75cba5967b2,
 transactions: [...],
 bits: 1729fb45,
 height: 577539,
@@ -32,13 +33,13 @@ coinbasevalue: 1335905154
 
 + Pool construct the coinbase transaction with payout address as the `vout`, and a `vin` with some random bytes including the block height, timestamp, some custom strings, and a placeholder for the miners to fill in.
 
-+ Pool construction the stratum job with the informations above and assign them to the connected stratum miners and tell the miner the minimum required target(leading 0s of the block hash) of the share to submit back.
++ Pool construct the stratum jobs with the informations above and assign them to the connected stratum miners and tell the miner the minimum required target(leading 0s of the block hash) of the share to submit back.
 
-+ Miners receive the job and iterate on the hashing with on the merkle tree which is constructed by the coinbase transaction and block transactions merkle branch. If the output hash meet the desired target than submit the work to pool stratum server as a share.
++ Miners receive the job and iterate on the hashing with the merkle tree which is constructed by the coinbase transaction and block transactions merkle branch. If the output hash meets the desired target then submit the work back to pool stratum server as a share.
 
-+ Pool collect the shares and check for each. If one share meet the target of the next valid block and construct the block and submmit to chain to broadcast the block with coinbase transaction in it. The target of the next block is calculated by the `bits` field in the block template and can be converted to the desired hash target.
++ Pool collects the shares and checks for each. If one share meets the target of the next valid block, then construct the block and submmit to chain to broadcast the block. The target of the next block is calculated by the `bits` field in the block template and can be converted to the desired hash target.
 
-+ Pool successfully broadcasted the block than any other pool via p2p communication with other nodes. The pool also received the coins sent to the defined wallet address. Then split the reward and pay back to the miners according how many shares did they ever commited to the pool. The argorithm could be `PPS`, `PPLNS`, other defined logics to make miners think profitable enough if join this pool. 
++ Pool successfully broadcasted the block than any other pool via p2p communication with other nodes. The pool also received the coins sent to the defined wallet address in coinbase transaction. Then split the reward and pay back to the miners according how many shares did they ever commited to the pool. The argorithm could be `PPS`, `PPLNS`, other defined logics to make miners think it's profitable enough if join this pool. 
 
 + Loop ends for this block, and the next loop will start with this valid block as the previous one to make the template of the next block.
 
