@@ -10,12 +10,12 @@ tags: [sticky]
 As many people ever heard about the blockchain stuff, probably bitcoin the most, and yes there's the community for the blockchain miners. So, maybe many guys are confused with it, what are they doing exactly? Right, this is the topic I am gonna write about in this post, but mostly about the tech facts.
 
 ## What is a blockchain miner?
-What a typical miner would do is go to the miner manufactory's portal or contact their sales to buy the iron boxes, which is pretty loud and noisy when it's running, then host them in a mining farm or a rackplace, so the farm keeper is responsible for the normal operations including setup and cabling for electricity and network, also cooling down is necessary to keep the mining machines running smoothly. Normally, the miners are all connected to mining pools to achieve a much more stable income rate, and then the pool running will be responsible for generating the jobs for the miners and check out their outcome. When the miners give a good outcome which could meet the requirement of constructing the next block on the chain, the pool will get the block's reward which is automatically done by a transaction coded in the block, then the pool will split rewards to the miners and keep a  bit fees for it. In addition, the farm owner will also charge the miner the fees for operations, rack spaces, and the electricity costs. After the miners receive the coins from the pool, they pay every cost they have to and with the left as the profit. If you are not interested in the tech details, you are done here.
+What a typical miner would do is go to the miner manufactory's portal or contact their sales to buy the iron boxes, which is pretty loud and noisy when it's running, then host them in a mining farm or a rackplace, so the farm keeper is responsible for the normal operations including setup and cabling for electricity and network, also cooling down is necessary to keep the mining machines running smoothly. Normally, the miners are all connected to mining pools to achieve a much more stable income rate, and then the pool runner will be responsible for generating the jobs for the miners and check out their outcome. When the miners give a good outcome which could meet the requirement of constructing the next block on the chain, the pool will get the block's reward which is automatically done by a transaction coded in the block, then the pool will split rewards to the miners and keep a  bit fees for it. In addition, the farm owner will also charge the miner the fees for operations, rack spaces, and the electricity costs. After the miners receive the coins from the pool, they pay every cost they have to and with the left as the profit. If you are not interested in the tech details, you are done here.
 
 ## Tech details about PoW mining.
 Here to explain the steps in one typical bitcoin mining loop.
 
-+ Pool calls the bitcoin node with the method `getblocktemplate`, which will give the template of the next block on the chain as the reponse.
++ Pool calls the bitcoin node with the method `getblocktemplate`, which will give the template of the next block on the chain as the response.
 
 ```
 Sample block template:
@@ -31,9 +31,9 @@ coinbasevalue: 1335905154
 
 + Pool calculate the hashes of the transactions in the template to get the merkle branch hash
 
-+ Pool construct the coinbase transaction with payout address as the `vout`, and a `vin` with some random bytes including the block height, timestamp, some custom strings, and a placeholder for the miners to fill in.
++ Pool constructs the coinbase transaction with payout address as the `vout`, and a `vin` with some random bytes including the block height, timestamp, some custom strings, and a placeholder for the miners to fill in.
 
-+ Pool construct the stratum jobs with the informations above and assign them to the connected stratum miners and tell the miner the minimum required target(leading 0s of the block hash) of the share to submit back.
++ Pool constructs the stratum jobs with the informations above and assigns them to the connected stratum miners and tell the miner the minimum required target(leading 0s of the block hash) of the share to submit back.
 
 + Miners receive the job and iterate on the hashing with the merkle tree which is constructed by the coinbase transaction and block transactions merkle branch. If the output hash meets the desired target then submit the work back to pool stratum server as a share.
 
