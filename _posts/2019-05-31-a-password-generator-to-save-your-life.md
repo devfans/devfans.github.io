@@ -28,6 +28,8 @@ The idea behind `passwizard` is quite simple indeed. You feed in a simple passph
 
 Heret o explain the interface of passwizard:
 
+![Passwizard]({{ site.baseurl }}/assets/images/a-password-generator-to-save-your-life-0.png)
+
 + Go to the site and it'll show two blank input fields. The first one is the passphrase you want to use, it could be a sentence or anything you can get from your mind. Press `enter` key to go to the next input, and the first field would be automatically hidden if not focused or hovered.
 
 + The second input field is for the account. It could be the username or an email address, or anything for there's no limitation. But the intention is for you to specify your user account identity. Press `enter` to jump to the next page.
