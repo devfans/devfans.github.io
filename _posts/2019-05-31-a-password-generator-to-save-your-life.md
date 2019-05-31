@@ -22,11 +22,21 @@ The idea behind `passwizard` is quite simple indeed. You feed in a simple passph
 
 + Randomness. It has to be random and less related to some common patterns. The `www.passwizard.com` implemented some tricks to reach that, so a single character change in the input would cause an absolute different password table generated.
 
-+ Complexity. With randomness, it's possible the password generated could be quite simple in chances, that would not be something we expect, so there're other tricks in the implementation to get rid of it. Maybe the algorithm is not perfect yet, but it's working well. Also, the input fields support every kind of characters you can type with your keyboard. If it's not, well I need to figure it out with your input then.
++ Complexity. With randomness, it's possible the password generated could be quite simple in chances, that would not be something we expect, so there're other tricks in the implementation to get rid of it. Maybe the algorithm is not perfect yet, but it's working well. Also, the input fields support every kind of characters you can type with your keyboard. If it's not, well I need to figure it out with your feedback then.
 
 #### Using `https://www.passwizard.com`
 
+Heret o explain the interface of passwizard:
 
++ Go to the site and it'll show two blank input fields. The first one is the passphrase you want to use, it could be a sentence or anything you can get from your mind. Press `enter` key to go to the next input, and the first field would be automatically hidden if not focused or hovered.
+
++ The second input field is for the account. It could be the username or an email address, or anything for there's no limitation. But the intention is for you to specify your user account identity. Press `enter` to jump to the next page.
+
++ On the next page, you can specify the platform or service name in the input field, and yes without any limitation. You may notice everything you change a character the password table below we are changed totally.
+
++ Click any type of the password in the table to select the one you want to use. It's a copyable. You can use them now.
+
++ You need to remember the passphrase (The first input) and which password type you choose which each platform. This way, you can keep a single private passphrase and use it for every account on every platform with knowing which type of password you chose for each platform. And, yes you need to mark the passphrase into your mind clearly, and that's the single thing you truly need to take care of.
 
 #### NOTES
 
