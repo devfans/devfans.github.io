@@ -42,8 +42,8 @@ Heret o explain the interface of passwizard(Navigations: `enter` and `mouse curs
 
 #### NOTES
 
-+ The domain name is still good till now, but without assurance to keep using it. But, it's for sure it has a stable access address: `https://passwizard.github.io` and it's hosted at `https://github.com/passwizard/passwizard.github.io`.
++ The domain name is still good till now, but without assurance to keep using it. It's for sure it has a stable access address: `https://passwizard.github.io` and it's hosted at `https://github.com/passwizard/passwizard.github.io`.
 
-+ If you are interested in optimize the implementation of it and polish it with brilliant new ideas, let me know.
++ If you are interested in optimizing the implementation of it or polishing it with brilliant new ideas, let me know.
 
 Still, I am not a native English speaker, just trying to get used with it.
