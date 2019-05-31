@@ -26,7 +26,7 @@ The idea behind `passwizard` is quite simple indeed. You feed in a simple passph
 
 #### Using `https://www.passwizard.com`
 
-Heret o explain the interface of passwizard(Navigations: `entry` and `mouse cursor`):
+Heret o explain the interface of passwizard(Navigations: `enter` and `mouse cursor`):
 
 ![Passwizard]({{ site.baseurl }}/assets/images/a-password-generator-to-save-your-life-0.png)
 
