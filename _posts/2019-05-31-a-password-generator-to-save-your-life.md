@@ -34,7 +34,7 @@ Heret o explain the interface of passwizard(Navigations: `enter` and `mouse curs
 
 + The second input field is for the account. It could be the username or an email address, or anything for there's no limitation. But the intention is for you to specify your user account identity. Press `enter` to jump to the next page.
 
-+ On the next page, you can specify the platform or service name in the input field, and yes without any limitation. You may notice everything you change a character the password table below we are changed totally.
++ On the next page, you can specify the platform or service name in the input field, and yes without any limitation. You may notice every time you change a character, the password table below will be changed totally.
 
 + Click any type of the password in the table to select the one you want to use. It's a copyable. You can use them now.
 
