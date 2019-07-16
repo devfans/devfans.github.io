@@ -11,7 +11,7 @@ This post is to list common formulas in bitcoin mining.
 
 ## Mining Difficulty
 
-A sha256 hash has 256 bits value as the target. The lower the the value is, the more difficult the job is to be done of generating such a hash.
+A sha256 hash has 256 bits value as the target. The lower the value is, the more difficult the job is to be done of generating such a hash.
 
 To calculate a difficulty of a hash target:
 
