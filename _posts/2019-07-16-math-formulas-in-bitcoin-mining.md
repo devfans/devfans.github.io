@@ -14,6 +14,7 @@ This post is to list common formulas in bitcoin mining.
 A sha256 hash has 256 bits value as the target. The lower the the value is, the more difficult the job is to be done of generating such a hash.
 
 To calculate a difficulty of a hash target:
+
 ``` difficulty = difficulty_1_target / current_target ```
 
 For bitcoin, the commonly used `difficulty_1_target` is `0x1d00ffff`. So the below target has the difficulty as 1.
@@ -28,50 +29,36 @@ Hashrate or hashpower is using to measure a mining machine's hashing performance
 
 In a typical pooled mining, the pool would collect the shares submitted by the mining machines to calculate the hashrate of a mining worker, which would be like:
 
-```
- hashrate (TH/s) = (share_diff_sum_in_1h / 3600) * pow(2, 32) / pow(10, 12)
-```
+```  hashrate (TH/s) = (share_diff_sum_in_1h / 3600) * pow(2, 32) / pow(10, 12) ```
 
 ## Mining luck
 
 Mining luck is used to measure the round luck, which means you are lucky if you find a block with less work done compared to the one calculated.
 
-```
- luck = 1/(share_diff_sum_round / netdiff)
-```
+``` luck = 1/(share_diff_sum_round / netdiff) ```
 
 So, for example the bitcoin chain's network difficulty is `9853622692186` (about 9.85T) when I am writing this post.
 This would mean to find a block within one day with a normal luck 100%, it would need this much hashpower:
 
-```
-hashrate = (9.85T / (60*60*24)) * pow(2, 32) / pow(10, 12) = 489826.2408572031 TH/s = 489.8 PH/s
-
-```
+``` hashrate = (9.85T / (60*60*24)) * pow(2, 32) / pow(10, 12) = 489826.2408572031 TH/s = 489.8 PH/s ```
 
 ## Rejection Rate
 
 For pooled mining, a share submitted by mining worker might be rejected for several reasons, like low difficulty, stale job, etc. 
 
-```
-rejectionrate = shares_rejected / shares_total
-```
+``` rejectionrate = shares_rejected / shares_total ```
 
 ## PPS Reward
 
 PPS is a commonly used mining reward calculation method to distribute mining rewards to miners. With this method, the mining pool's profit would depends on the pool's luck, while the miner's reward would be stable.
 
-```
-reward = block_reward * hashrate / network_difficulty 
-
-```
+``` reward = block_reward * hashrate / network_difficulty ```
 
 ## PPLNS Reward
 
 PPLNS is another commonly used mining reward calculation method which is used for avoid pool hoppers. The N is normal bigger than 5. With this method, miner's profit would depend on the pool's luck. The more shares the worker contribute to pool's last N round, the more reward will be paid out to this user from this round's block reward.
 
-```
-reward = block_reward * miner_shares_in_last_N_round / shares_total_in_last_N_round
-```
+``` reward = block_reward * miner_shares_in_last_N_round / shares_total_in_last_N_round ```
 
 In addition, I am not a native English speaker, just trying to get used with writing posts in it.
 
