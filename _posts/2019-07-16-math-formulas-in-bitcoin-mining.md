@@ -21,7 +21,7 @@ Each bitcoin block has the required difficulty coded as bits in block header, wh
 
 ``` sign = nbits & 0x00800000 ```
 
-``` mantissa = (nbits & 0xffffff) ```
+``` mantissa = (nbits & 0x7fffff) ```
 
 ``` exponent = nbits >> 24 ```
 
