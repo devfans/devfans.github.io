@@ -35,7 +35,7 @@ For bitcoin, the commonly used `difficulty_1_target` is `0x1d00ffff` in nbits. S
 
 Hashrate or hashpower is used to measure a mining machine's hashing performance. Hashrate `1KH/s` means `1000` hashes per second, and there's more units commonly used as below:
 
-``` 1 EH/s = 1000 PH/s = 1000, 000 TH/s = 1000, 000, 000 GH/s = 1000, 000, 000, 000 KH/s ```
+``` 1 EH/s = 1000 PH/s = 1000, 000 TH/s = 1000, 000, 000 GH/s = 1000, 000, 000, 000 MH/s  = 1000, 000, 000, 000, 000 KH/s = 1000, 000, 000, 000, 000, 000 H/s ```
 
 In a typical pooled mining, the pool would collect the shares submitted by the mining machines to calculate the hashrate of a mining worker, which would be like:
 
