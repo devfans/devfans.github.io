@@ -20,8 +20,11 @@ To calculate a difficulty of a hash target:
 Each bitcoin block has the required difficulty coded as bits in block header, which is a 32 bits value in compact `nBits` format to represent the block target. To convert the `nBits` to `target`:
 
 ``` sign = nbits & 0x00800000 ```
+
 ``` mantissa = (nbits & 0xffffff) ```
+
 ``` exponent = nbits >> 24 ```
+
 ``` target = (-1^sign) * mantissa * 256^(exponent-3) ```
 
 For bitcoin, the commonly used `difficulty_1_target` is `0x1d00ffff` in nbits. So the below target has the difficulty as 1.
