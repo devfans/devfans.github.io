@@ -67,7 +67,7 @@ To simplify a bit, use `pow(2**16)` to replace `0xffff`
 
 ``` hashes = diff * pow(2, 32) ```
 
-+ To do such hash within 24 hours would require hashrate as
++ To do such hashes within 24 hours would require hashrate as
 
 ``` hashrate(H/s) = hashes/ (60*60*24) = diff * pow(2, 32) / (60*60*24) ```
 
