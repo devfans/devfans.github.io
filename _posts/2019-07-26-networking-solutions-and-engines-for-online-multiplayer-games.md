@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Networing Solutions and Engines for Online Multiplayer Games"
+title:  "Networking Solutions and Engines for Online Multiplayer Games"
 author: devfans
 categories: [ MMO, MOBA, game, networking, multiplayer, lockstep ]
 image: /images.pexels.com/photos/596750/pexels-photo-596750.jpeg?cs=srgb&dl=buttons-close-up-controller-596750.jpg&fm=jpg
@@ -16,7 +16,7 @@ A typical online multiplayer means each player connected as a single client can 
 
 #### Demerministic Architecture
 
-A traditional way to handle this is called `lockstep` way,  which means in each game logic loop, a client should be able to successfully send its input to every other client and get the inputs from other players before the game logic is simulated. So the architecture would be like peer to peer networking. With this kind of architect, the game client needs to generate deterministic behaviors with given inputs, that means when every client simulates the game logic, they should give the same output otherwise the players would see different game state on the screen and the game can not continue anymore. 
+A traditional way to handle this is called `lockstep` way,  which means in each game logic loop, a client should be able to successfully send its input to every other client and get the inputs from other players before the game logic is simulated. So the architecture would be like peer to peer networking. With this kind of architecture, the game client needs to generate deterministic behaviors with given inputs, that means when every client simulates the game logic, they should give the same output otherwise the players would see different game state on the screen and the game can not continue anymore. 
 
 With peer to peer networking topology, there are some drawbacks, because it requires every client to have a good connection with every other client. It could work well in a LAN network but could be an issue on the slower Internet. So, a new solution is to host a dedicated server to receive the inputs from each client and broadcast the data. It still requires the client to do the simulations and give deterministic results on each client. With this improvement, higher throughput can be served and players can have better game experience. Modern MOBA games normally use this solution nowadays.
 
@@ -39,14 +39,16 @@ The Unreal Engine of Epic Games has built a networking module to support hosting
 The networking module in Unity was called UNet, which was already deprecated and Unity is working to make a new much powerful one, on which google might be keeping a partnership with Unity.
 
 #### Photon
-The Photo of Exit Games has built a cloud platform to have online multiplayer game developers, and they provide several solutions for game makers. The Photon Realtime is mainly targeted as a cloud-based full-stack networking solution with state replication architect which can provide customized service to use their cloud resources. The Photon Unity Networking also called PUN is a solution based on the realtime solution but is focusing on integration with the Unity game engine which reimplemented Unity networking modules and enhanced it. The Photon Bolt is a customized solution with inspirations in design which need to run a Unity instance to serve as the authoritative server, also it provides flexible high-level APIs to optimize the performance. Another product of them is called Photon Quantum which is based on deterministic architecture and focuses on MOBA games and action games.
+The Photo of Exit Games has built a cloud platform to have online multiplayer game developers, and they provide several solutions for game makers. The Photon Realtime is mainly targeted as a cloud-based full-stack networking solution with state replication architecture which can provide customized service to use their cloud resources. The Photon Unity Networking also called PUN is a solution based on the realtime solution but is focusing on integration with the Unity game engine which reimplemented Unity networking modules and enhanced it. The Photon Bolt is a customized solution with inspirations in design which need to run a Unity instance to serve as the authoritative server, also it provides flexible high-level APIs to optimize the performance. Another product of them is called Photon Quantum which is based on deterministic architecture and focuses on MOBA games and action games.
 
 #### SpatialOS
 The SpatialOS provided by the Improbable.io starts to show it's power with MMOs as the main target. With customized server worker running with the SpatialOS, it enables one game instance to has a large map and serve at least hundreds of players while the authoritative server is cross-host and dynamically scaling. With the investment from the Netease, SpatialOS has started the exploration of the Chinese market.
 
 #### Aether Engine
-The company called Hadean is a group of minds designing deep-level customization of how to let the application which espectially requires the realtime distributed computations to consume the hardware resource super efficiently and with automatic scaling according to the resource requirement. Their product is called HadeanOS which empowered some science computations work and shows its potential on MMO games. They established a partnership with EVE's maker the CCP and started to work on the amazing EVE: Aether Wars project. With this tech demo, it showed its potential in MMO realtime games. According to their statistics, the game instance had 3852 participants from all around the world and 14264 ships joined the war. Behind the project, the product called the Aether Engine started the attempts in the Game Market, especially for MMO realtime times.
+The company called Hadean is a group of minds designing deep-level customization of how to let the application which espectially requires the realtime distributed computations to consume the hardware resource super efficiently and with automatic scaling according to the resource requirement. Their product is called HadeanOS which empowered some science computations work and shows its potential on MMO games. They established a partnership with EVE's maker the CCP and started to work on the amazing EVE: Aether Wars project. With this tech demo, it showed its potential in MMO realtime games. According to their statistics, the game instance had 3852 participants from all around the world and 14264 ships joined the war. Behind the project, the product called the Aether Engine started the attempts in the game networking engine market, especially for MMO realtime games.
 
+#### Customized Engine
+For big game makers, they would normally make their own engine for their speicific game, which is deeply designed for the features required by the game. This would require rich game development experience and cost dedicated staff resources to focus on the networking part, while this way could provide better performance than a general networking engine product. 
 
 
 In addition, I am not a native English speaker, just trying to get used with writing posts in it.
