@@ -7,7 +7,7 @@ image: /images.pexels.com/photos/596750/pexels-photo-596750.jpeg?cs=srgb&dl=butt
 tags: [sticky]
 ---
 
-In modern days, the Internet is showing its power greatly and peoples are getting faster and faster Internet access around the world, and even move with the 5G is coming soon. Gaming online has been popular for a long time and MOBAs like LOL and MMOs like Fortnite are showing the benefits from the faster Internet. This blog is ganna talk about networking solutions and available networking engines in current days, but mainly based on my research and might have some misunderstanding at some points.
+In modern days, the Internet is showing its power greatly and peoples are getting faster and faster Internet access around the world, and even further with the 5G coming soon. Gaming online has been popular for a long time and MOBAs like LOL and MMOs like Fortnite are showing the benefits from the faster Internet. This blog is ganna talk about networking solutions and available networking engines in current days, but mainly based on my research and might have some misunderstanding at some points.
 
 ## Online Multiplayer Games
 A typical online multiplayer means each player connected as a single client can see other player's realtime state like positions and behaviors and react upon that. In the sense of  `realtime`, different games may have different requirement levels. For example, MOBA games like Dota2, the realtime state means the player can do the right actions according to what he can see or he'll miss the target if he's seeing the position of the target which actually already changed several frames ago. For MMO games, the requirements might be a bit lower, if not many interactions happening between two targets. 
