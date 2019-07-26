@@ -4,7 +4,7 @@ title:  "Bitcoin Mining with Stratum Miners"
 author: devfans
 categories: [ Bitcoin, mining, stratum, crypto ]
 image: /images.pexels.com/photos/730567/pexels-photo-730567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
-tags: [sticky]
+tags: [featured]
 ---
 
 As many people ever heard about the blockchain stuff, probably bitcoin the most, and yes there's the community for the blockchain miners. So, maybe many guys are confused with it, what are they doing exactly? Right, this is the topic I am gonna write about in this post, but mostly about the tech facts.
