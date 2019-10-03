@@ -40,6 +40,14 @@ Heret o explain the interface of passwizard(Navigations: `enter` and `mouse curs
 
 + You need to remember the passphrase (The first input) and which password type you choose which each platform. This way, you can keep a single private passphrase and use it for every account on every platform with knowing which type of password you chose for each platform. And, yes you need to mark the passphrase into your mind clearly, and that's the single thing you truly need to take care of.
 
+#### Using PassWizard Wechat mini-program
+
+![PasswizardMiniProgram]({{ site.baseurl }}/assets/images/wechat.mini.PNG)
+
+Scan below QR to try it:
+![PasswizardQR]({{ site.baseurl }}/assets/images/passwizard.qr.PNG)
+
+
 #### NOTES
 
 + The domain name is still good till now, but without assurance to keep using it. It's for sure it has a stable access address: `https://passwizard.github.io` and it's hosted at `https://github.com/passwizard/passwizard.github.io`.
