@@ -67,6 +67,9 @@ struct evconnlistener * listener = evconnlistener_new_bind(
 );
 assert(listener);
 
+// Stop listening
+evconnlistener_disable(listener);
+
 // To release it
 if (listener != nullptr)
   evconnlistener_free(listener);
@@ -192,8 +195,119 @@ evbuffer_free(buffer);
 
 ```
 
+#### Http
+
+Libevent provides `struct evhttp` for web http serving.
+
+```
+#include <event2/http.h>
+#include <event2/keyvalq_struct.h>
+
+struct evhttp * http = evhttp_new(base);
 
 
+// Set allowed methods
+evhttp_set_allowed_methods(http, EVHTTP_REQ_GET | EVHTTP_REQ_POST, EVHTTP_REQ_HEAD);
 
+// Set endpoint callback
+evhttp_set_cb(
+  http,
+  path,
+  cb,
+  data   // Could pass `this` here for member function callback
+);
+
+// Bind with handle
+struct evhttp_bound_socket * handle = evhttp_bind_socket_with_handle(
+  http,
+  listen_address,
+  listen_port
+);
+assert(handle);
+
+// Implement a callback
+void handle_request(
+  req,  // `struct evhttp_requst *`
+  data  // User supplied data
+) {
+  // Get request headers
+  struct evkeyvalq * input_headers = evhttp_request_get_input_headers(req);
+  const char * value = evhttp_find_header(input_headers, "key");
+
+  // Set response headers
+  struct evkeyvalq * output_headers = evhttp_request_get_output_headers(req);
+  evhttp_add_header(output_headers, "key", "value");
+
+  // Get method
+  evhttp_cmd_type method = evhttp_request_get_command(req);
+  if (method == EVHTTP_REQ_POST) {}
+
+  // Parse url parameters and convert to evkeyvalq
+  struct evhttp_uri * uri = evhttp_uri_parse(evhttp_request_get_url(req));
+  char * query_dup = nullptr;
+  const char * query = evhttp_uri_get_query(uri);
+  query_dup = strdup(query);
+  evhttp_uri_free(uri);
+  struct evkeyvalq params;
+  evhttp_parse_query_str(query_dup, &params); // Then can use evhttp_find_header to get key values
+  free(query_dup);
+
+  // Parse body
+  char * body;
+  struct evbuffer * buffer = evhttp_request_get_input_buffer(req);
+  auto length = evbuffer_get_length(buffer);
+  body = (char *)malloc(length + 1);
+  evbuffer_copy_out(buffer, body, length);
+  body[length] = '\0'  // event buffer does not include '\0'
+  evbuffer_free(buffer);
+
+  // Send string response
+  struct evbuffer * reply = evbuffer_new();
+  reply_add_printf(reply, "{ \"data\": \"%s\" }", data.c_str());
+  evhttp_send_reply(req, HTTP_OK, "OK", reply);
+  evbuffer_free(reply);
+}
+
+```
+
+#### Event
+
+Libevent provides general purpose event to schedule executions to happen at deired events.
+
+```
+// Allocate new events
+struct event * new_event = event_new(
+  base,
+  fd,        // fd, or signal or -1
+  events,    // 0 or EV_PERSIST, EV_READ, EV_WRITE, EV_CLOSED
+  callable,
+  data
+);
+
+// Schedule the event with a timeout
+event_add(
+  new_event,
+  timeout     // `struct timeval *` if NULL, the event will only be activated when deired events appear
+);
+
+// Schedule tasks to be executed in event loop thread
+event_add(new_event, NULL);
+event_activate(new_event, 0 /*flags to pass in callback*/, 0);
+
+```
+
+
+### Sum up
+
+Libevent encapsues system I/O and sigal handling, providing convenient functionalilites for improving network server performance, however, it also has some drawbacks like some bad implementations for dns and http servers and the timers behave inexactly and cant cope with time jumps. There's another library called `libev` trying to solve this issue and mainly focus on POSIX event efficiency, while libevent is providing a full stack solution. 
+
+
+##### Refs:
+
++ [Libevent Reference][libevent_refs]
++ [libevent vs libev][libevent_vs_libev]
+
+[libevent_refs]: https://libevent.org/doc/index.html
+[libevent_vs_libev]: https://stackoverflow.com/questions/9433864/whats-the-difference-between-libev-and-libevent
 
 
