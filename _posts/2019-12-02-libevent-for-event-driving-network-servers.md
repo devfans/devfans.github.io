@@ -136,10 +136,19 @@ When using openssl to encrypt the traffic
 #include <openssl/ssl.h>
 #include <event2/bufferevent_ssl.h>
 
-SSL_CTX * ssl_ctx = get_server_ssl_ctx(
-  tls_cert_file,
-  tls_key_file
-);
+// Init openssl
+SSL_load_error_strings();
+SSL_library_init();
+OpenSSL_add_all_algorithms();
+init_ssl_locking();
+if (!RAND_pool()) {
+  std::cout << "SSL random seed error " << get_ssl_error_string();
+}
+
+SSL_CTX * ssl_ctx = SSL_CTX_new(TLS_server_method());
+
+assert(SSL_CTX_use_certificate_chain_file(ssl_ctx, tls_cert_file.c_str()));
+assert(SSL_CTX_use_PrivateKey_file(ssl_ctx, tls_key_file.c_str(), SSL_FILETYPE_PEM));
 
 SSL * ssl = SSL_new(ssl_ctx);
 
