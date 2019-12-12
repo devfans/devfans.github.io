@@ -3,7 +3,7 @@ layout: post
 title:  "Libevent for Event Driven Network Servers"
 author: devfans
 categories: [ libevent, c++ ]
-image: /cdn.stocksnap.io/img-thumbs/960w/7JBL5TC3S7.jpg
+image: /cdn.stocksnap.io/img-thumbs/960w/O5NJKI9KGZ.jpg
 tags: [featured]
 ---
 
@@ -294,6 +294,16 @@ event_add(
 event_add(new_event, NULL);
 event_activate(new_event, 0 /*flags to pass in callback*/, 0);
 
+```
+
+#### Libevent in Mutlithreads
+
+When using libevents in multithreads, needs to state to use pthread locks before event base is created
+
+```
+#include <event2/thread.h>
+
+evthread_use_pthreads();
 ```
 
 
