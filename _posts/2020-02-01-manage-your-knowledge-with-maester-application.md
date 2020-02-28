@@ -8,7 +8,7 @@ image: /cdn.stocksnap.io/img-thumbs/960w/A4GPO5BBZD.jpg
 tags: [sticky]
 ---
 
-Sometime, you may find an interesting article or an awesome resource, but after a period, you are feeling hard to found where it is. Is it in your bookmark list? What's the name of it? After 10 minutes searching, you will feel depressed if you cannot really find it. Or one day you think out a brilliant idea, but after a month, you forget about it and you may forget it forever. Yes, you need a tool to help you to avoid this kind of annoying situations.
+Sometime, you may find an interesting article or some awesome resource, but after a period, you are feeling hard to find where it is. Is it in your bookmark list? What's the name of it? After 10 minutes searching, you will feel depressed if you cannot really find it. Or one day you think out a brilliant idea, but after a month, you forget about it and you may forget it forever. Yes, you need a tool to help you to avoid this kind of annoying situations.
 
 You may ever used some tree like structured knowledge chart to help you classify things and compose a clear map dumped from your mind and try to maintain it with adding more and more content. This is a common and popular way for human to organize things and manage tasks. I am sure you can easily find a lot of neat tools that could do this for you. 
 
