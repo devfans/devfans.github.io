@@ -4,7 +4,7 @@ title:  "Networking Solutions and Engines for Online Multiplayer Games"
 author: devfans
 categories: [ MMO, MOBA, game, networking, multiplayer, lockstep ]
 image: /images.pexels.com/photos/596750/pexels-photo-596750.jpeg?cs=srgb&dl=buttons-close-up-controller-596750.jpg&fm=jpg
-tags: [sticky]
+tags: [featured]
 ---
 
 In modern days, the Internet is showing its power greatly and peoples are getting faster and faster Internet access around the world, and even further with the 5G coming soon. Gaming online has been popular for a long time and MOBAs like LOL and MMOs like Fortnite are showing the benefits from the faster Internet. This blog is ganna talk about networking solutions and available networking engines in current days, but mainly based on my research and might have some misunderstanding at some points.
