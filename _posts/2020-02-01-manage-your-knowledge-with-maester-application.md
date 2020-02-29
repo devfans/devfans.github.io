@@ -12,13 +12,13 @@ Sometime, you may find an interesting article or some awesome resource, but afte
 
 You may ever used some tree like structured knowledge chart to help you classify things and compose a clear map dumped from your mind and try to maintain it with adding more and more content. This is a common and popular way for human to organize things and manage tasks. I am sure you can easily find a lot of neat tools that could do this for you. 
 
-However, sometime you may feel hard to compose a tree with the pieces of knowledge or content, and you even can not easily tell the dependency relationship of two items or which should be sub-content of another. This is true because it's quite common as you see some objects or things do not really have a tree structure like relationship, and one node could have relations with unlimited other nodes, you might feel like a mess. For this situation, we commonly use another way to manage them, a flat list with tags and categories. It's very common some of the objects share the same category or same tags. If you want to locate something, just search by tags directly. Yeah, the name Maester from GoT, is used to name the tool I will show in this post, and it's the simple tool to handle mess situations for your.
+However, sometime you may feel hard to compose a tree with the pieces of knowledge or content, and you even can not easily tell the dependency relationship of two items or which should be sub-content of another. This is true because it's quite common as you see some objects or things do not really have a tree structure like relationship, and one node could have relations with unlimited other nodes, you might feel like a mess. For this situation, we commonly use another way to manage them, a flat list with tags and categories. It's very common some of the objects share the same category or same tags. If you want to locate something, just search by tags directly. Yeah, the name Maester from GoT, is used to name the tool I will show in this post, and it's the simple tool to handle mess situations for you.
 
 #### So what does Maester do:
 
 - You can share the web page address to it and create a page in it with tags and a category.
 - You can easily search with tags, categories or names or even just a keyword
-- It provides cloud storage service and you can seamlessly synchronize things across platforms or devices.
+- It provides cloud storage service and you can seamlessly synchronize things across platforms and devices.
 - It's designed to support common content types, like a webpage address, a piece of text or other rich content.
 
 Currently only MacOS versiona and IOS version are available.
