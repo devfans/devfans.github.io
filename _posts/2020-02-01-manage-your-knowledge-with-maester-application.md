@@ -22,8 +22,8 @@ However, sometime you may feel hard to compose a tree with the pieces of knowled
 
 Currently only MacOS versiona and IOS version are available.
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/flickity/2.0.0/flickity.min.css">
+<script src="https://cdn.staticfile.org/flickity/2.0.0/flickity.pkgd.min.js"></script>
 <!-- JavaScript -->
 
 <style>
@@ -65,13 +65,13 @@ body { font-family: sans-serif; }
 <p>
 <div class="main-carousel" style="width: 100%" data-flickity='{ "cellAlign": "left", "contain": true, "lazyLoad": true }' js-flickity>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_mac_0.png" alt="Maester mac 0" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_mac_0.png" alt="Maester mac 0" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_mac_1.png" alt="Maester mac 1" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_mac_1.png" alt="Maester mac 1" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_mac_2.png" alt="Maester mac 2" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_mac_2.png" alt="Maester mac 2" />
   </div>
 </div>
 </p>
@@ -80,19 +80,19 @@ body { font-family: sans-serif; }
 <p>
 <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "lazyLoad": true }' js-flickity>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_ios_0.png" alt="Maester ios 0" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_ios_0.png" alt="Maester ios 0" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_ios_1.png" alt="Maester ios 1" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_ios_1.png" alt="Maester ios 1" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_ios_2.png" alt="Maester ios 2" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_ios_2.png" alt="Maester ios 2" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_ios_3.png" alt="Maester ios 3" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_ios_3.png" alt="Maester ios 3" />
   </div>
   <div class="carousel-cell">
-    <img class="carousel-cell-image" data-flickity-lazyload="/assets/images/maester/maester_ios_4.png" alt="Maester ios 4" />
+    <img class="carousel-cell-image" data-flickity-lazyload="https://static.livefeed.cn/static/blog/maester/maester_ios_4.png" alt="Maester ios 4" />
   </div>
 </div>
 </p>
