@@ -1,7 +1,7 @@
 # Site
 name: "devfans blog"
 description: 'Personal blog of Stefan Liu (devfans@github)'
-logo: '/avatars3.githubusercontent.com/u/13849768?v=4'
+logo: '/static.livefeed.cn/static/blog/devfans.jpeg'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
 disqus: 'devfans-blog'
@@ -23,7 +23,7 @@ authors:
     devfans:
       name:           Stefan Liu
       site:           https://blog.devfans.io
-      avatar:         /avatars3.githubusercontent.com/u/13849768?v=4
+      avatar:         /static.livefeed.cn/static/blog/devfans.jpeg
       bio:            "Coding with ideas"
       email:          stefanliu@outlook.com
       twitter:        https://twitter.com/thinkasibe
@@ -37,7 +37,7 @@ defaults:
     values:
       layout: post
       author: devfans
-      avatar: /avatars3.githubusercontent.com/u/13849768?v=4
+      avatar: /static.livefeed.cn/static/blog/devfans.jpeg
 
   # all pages
   - scope:
