@@ -22,10 +22,24 @@
 
 </div>
 {% endif %}
+
 {% if site.gitalk %}
 <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.0.0/gitalk.min.css">
 <script src="https://cdn.staticfile.org/gitalk/1.0.0/gitalk.min.js"></script>
 <div class="comment">
-{% include comments.html %}
+
+<div id="gitalk-container"></div>
+<script>
+var gitalk = new Gitalk({
+    id: '{{ page.date }}',
+    clientID: '{{ site.gitalk.clientID }}',
+    clientSecret: '{{ site.gitalk.clientSecret }}',
+    repo: '{{ site.gitalk.repo }}',
+    owner: '{{ site.gitalk.owner }}',
+    admin: ['{{ site.gitalk.owner }}'], 
+	labels: ['Gitalk'],
+})
+gitalk.render('gitalk-container')
+</script> 
 </div>
 {% endif %}
