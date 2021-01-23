@@ -3,7 +3,7 @@ layout: post
 title:  "Bitcoin Mining with Stratum Miners"
 author: devfans
 categories: [ Bitcoin, mining, stratum, crypto ]
-image: https://static.livefeed.cn/static/blog/bitcoin.jpeg
+image: /static.livefeed.cn/static/blog/bitcoin.jpeg
 tags: [featured]
 ---
 
