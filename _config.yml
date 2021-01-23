@@ -11,7 +11,6 @@ gitalk:
     owner: devfans
     repo: devfans.github.io
     clientID: 9defe950e56a5290d962
-    clientSecret: 65c050672ab9813dcd13c293cf99fb7eeb3bccec
     admin: devfans
 email: 'stefanliu@outlook.com'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
