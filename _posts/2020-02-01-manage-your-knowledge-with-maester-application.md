@@ -3,7 +3,6 @@ layout: post
 title:  "Manage Your Knowledge with Maester Application"
 author: devfans
 categories: [ Knowledge, Mind, Bookmark ]
-image: /images.pexels.com/photos/162622/facebook-login-office-laptop-business-162622.jpeg?cs=srgb&dl=communication-connection-data-162622.jpg&fm=jpg
 image: https://static.livefeed.cn/static/blog/A4GPO5BBZD.jpg
 tags: [sticky]
 ---
