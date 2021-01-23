@@ -3,7 +3,7 @@ layout: post
 title:  "A Password Generator to Save Your Life"
 author: devfans
 categories: [ Password, Attack, Credential ]
-image: /images.pexels.com/photos/162622/facebook-login-office-laptop-business-162622.jpeg?cs=srgb&dl=communication-connection-data-162622.jpg&fm=jpg
+image: https://static.livefeed.cn/static/blog/communication-connection-data-162622-min.jpg
 tags: [featured]
 ---
 Living in modern society, most of the users of online services have to bear the pain to remember the access to plenty of platforms including websites, services, apps, bank account, email, etc. The login credentials cannot be too simple for security reasons, or too complex to remember it clearly. I believe everyone could lose some of the credentials for cannot recall it clear if he's keeping more than five quite different access passphrases. And if you are trying to use similar passwords for multiple services, you are possible to mess up with them easily and using similar passwords is not a good practice for security reasons, since you even don't know it if some services you ever used are hacked and your credentials are posted to public pages someday.
