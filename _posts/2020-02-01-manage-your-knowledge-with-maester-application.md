@@ -3,7 +3,7 @@ layout: post
 title:  "Manage Your Knowledge with Maester Application"
 author: devfans
 categories: [ Knowledge, Mind, Bookmark ]
-image: https://static.livefeed.cn/static/blog/A4GPO5BBZD.jpg
+image: /static.livefeed.cn/static/blog/A4GPO5BBZD.jpg
 tags: [sticky]
 ---
 
