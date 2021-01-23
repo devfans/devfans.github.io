@@ -3,7 +3,7 @@ layout: post
 title:  "Networking Solutions and Engines for Online Multiplayer Games"
 author: devfans
 categories: [ MMO, MOBA, game, networking, multiplayer, lockstep ]
-image: /images.pexels.com/photos/596750/pexels-photo-596750.jpeg?cs=srgb&dl=buttons-close-up-controller-596750.jpg&fm=jpg
+image: https://static.livefeed.cn/static/blog/buttons-close-up-controller-596750.jpg
 tags: [featured]
 ---
 
