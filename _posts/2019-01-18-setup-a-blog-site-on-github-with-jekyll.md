@@ -3,7 +3,7 @@ layout: post
 title:  "Setup a blog site on github with Jekyll"
 author: devfans
 categories: [ Jekyll, tutorial ]
-image: /cdn.stocksnap.io/img-thumbs/960w/TZHYCANBO9.jpg
+image: https://static.livefeed.cn/static/blog/TZHYCANBO9.jpg
 tags: [featured]
 ---
 
