@@ -1,5 +1,5 @@
 <!--  Don't edit anything here. Set your disqus id in _config.yml -->
-
+{% if site.disqus_username %}
 <div id="comments" class="mt-5">
   <div id="disqus_thread"></div>
   <script>
@@ -21,3 +21,11 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </div>
+{% endif %}
+{% if site.gitalk %}
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.0.0/gitalk.min.css">
+<script src="https://cdn.staticfile.org/gitalk/1.0.0/gitalk.min.js"></script>
+<div class="comment">
+{% include comments.html %}
+</div>
+{% endif %}
