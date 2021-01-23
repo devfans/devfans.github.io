@@ -3,7 +3,7 @@ layout: post
 title:  "Math Formulas in Bitcoin Mining"
 author: devfans
 categories: [ Bitcoin, mining, stratum, crypto, formula, hashrate ]
-image: https://static.livefeed.cn/static/blog/bitcoin-blockchain-close-up-1097946.jpg
+image: /static.livefeed.cn/static/blog/bitcoin-blockchain-close-up-1097946.jpg
 tags: [featured]
 ---
 
