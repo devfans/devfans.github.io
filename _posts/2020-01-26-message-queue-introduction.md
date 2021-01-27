@@ -25,7 +25,21 @@ Redis作为常用的内存服务器，支持多种数据类型，其中List可�
 
 The max length of a list is 232 - 1 elements (4294967295, more than 4 billion of elements per list).
 
-#### Redis Pub/Sub
+##### Redis Pub/Sub
 基于发布订阅的redis pubsub功能提供了基于channel和pattern的事件订阅，可以作为即时消息发布，不适合作为队列。
 
-#### ActiveMQ
+##### ActiveMQ
+ActiveMQ是一款老牌的消息队列，支持多种协议，由于ActiveMQ不适合超高吞吐量的业务，使用任务在逐渐减少
+
+##### RabbitMQ
+LinkedIn公司开发的RabbitMQ基于AMQP协议实现的消息队列也曾风靡一时，支持多种Exchange模式及延迟及死信功能，很强大。
+
+##### Kafak
+消息队列中的骨干，特别是高吞吐量的业务中，支持分片，消息事务及流处理，在日志收集领域的独占鳌头。
+
+##### RocketMQ
+阿里的产品，很强大，基于Java开发，对常用消息队列功能做了很多优化。只是在其他公司不那么流行。
+
+##### Pulsar
+Yahoo开发
+
