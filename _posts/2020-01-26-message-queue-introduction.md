@@ -34,7 +34,7 @@ ActiveMQ是一款老牌的消息队列，支持多种协议，由于ActiveMQ不�
 ##### RabbitMQ
 LinkedIn公司开发的RabbitMQ基于AMQP协议实现的消息队列也曾风靡一时，支持多种Exchange模式及延迟及死信功能，很强大。
 
-##### Apache Kafak
+##### Apache Kafka
 消息队列中的骨干，Apache顶级项目，特别是在高吞吐量的业务中，支持分片，消息事务及流处理，在日志收集领域的独占鳌头。
 
 ##### RocketMQ
