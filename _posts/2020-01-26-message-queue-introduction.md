@@ -6,6 +6,7 @@ categories: [ MessageQueue, Kafka ]
 image: /static.livefeed.cn/static/blog/communication-connection-data-162622-min.jpg
 tags: [featured]
 ---
+### 消息队列简介
 消息队列的应用场景非常多，Kafka作为一款成熟的解决方案，在很多公司的业务中应用十分广泛。
 
 #### 消息队列的主要应用场景
@@ -59,6 +60,13 @@ Yahoo开发的消息队列，较Kafka有很多改善。很有前途。
 
 ##### 消息持久性（落盘）
 重要消息要落盘，不能丢
+
+### Kafka简介
+2011 开源，Apache顶级项目，由Scala及Java开发。 主要概念有Broker，Topic, Partition, Replica, Producer, Consumer, ConsumerGroup, Offset, Coordinator, ISR等。
+
+#### Kafka分区Leader逻辑
+Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区的Leader, 一般通过i % N（broker数量）确认Leader分区副本。每个分区的Follower副本会从Leader副本同步数据，同步较好的副本子集即为ISR。当Leader宕机时会从ISR选出一个作为新的Leader。副本中同步延迟较多的会被剔除。
+
 
 #### Kafka主要缺憾
 
