@@ -79,7 +79,14 @@ Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区�
 ##### 消息消费
 - 简单消息消费者可以指定topic分区和offset进行消费，offset由客户端维护。
 
-- 消费者分组可以分配多个消费者接收同一topic的消息。客户端向组coordinator发送joinGroup请求时会触发group rebalance，coordinator指定的group leader会根据选定的balance策略进行分区分配。消费者组成员数不能多于分区数量。常用策略有 range和round robin。joinGroup/leaveGroup/Coordinator/Broker/分区改变均会触发group rebalance。
+- 消费者分组可以分配多个消费者接收同一topic的消息。客户端向组coordinator发送joinGroup请求时会触发group rebalance，coordinator指定的group leader会根据选定的balance策略进行分区分配。消费者组成员数不能多于分区数量。常用策略有 range和round robin。
+
+- 触发group rebalance
+  + joinGroup
+  + leaveGroup
+  + Coordinator宕机
+  + Broker宕机
+  + 分区改变
 
 
 #### Kafka主要缺憾
