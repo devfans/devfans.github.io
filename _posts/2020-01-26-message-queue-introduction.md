@@ -67,6 +67,20 @@ Yahoo开发的消息队列，较Kafka有很多改善。很有前途。
 #### Kafka分区Leader逻辑
 Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区的Leader, 一般通过i % N（broker数量）确认Leader分区副本。每个分区的Follower副本会从Leader副本同步数据，同步较好的副本子集即为ISR。当Leader宕机时会从ISR选出一个作为新的Leader。副本中同步延迟较多的会被剔除。
 
+#### Kafka 客户端
+
+- 官方客户端Java
+- librdkafka
+- sarama
+
+##### 消息生产入Queue
+消息生产可以指定分区将消息入Queue，也可以采用一致的分区选择策略判定分区，一般是通过对传入的key作hash计算。同时生产者可以指定需要返回的acks, 比如 0 ：不需要确认， -1： Leader确认即可， 1: 所有ISR确认。同时如果idempotent开启，producer会对消息分配递增的seq no，用于确保消息幂等性，防止消息重复入queue，也可监测是否有消息丢失。另外，消息入Queue可以批量异步处理。
+
+##### 消息消费
+- 简单消息消费者可以指定topic分区和offset进行消费，offset由客户端维护。
+
+- 消费者分组可以分配多个消费者接收同一topic的消息。客户端向组coordinator发送joinGroup请求时会触发group rebalance，coordinator指定的group leader会根据选定的balance策略进行分区分配。消费者组成员数不能多于分区数量。常用策略有 range和round robin。joinGroup/leaveGroup/Coordinator/Broker/分区改变均会触发group rebalance。
+
 
 #### Kafka主要缺憾
 
