@@ -4,7 +4,7 @@ title:  "Manage Your Knowledge with Maester Application"
 author: devfans
 categories: [ Knowledge, Mind, Bookmark ]
 image: /static.livefeed.cn/static/blog/A4GPO5BBZD.jpg
-tags: [sticky]
+tags: [featured]
 ---
 
 Sometime, you may find an interesting article or some awesome resource, but after a period, you are feeling hard to find where it is. Is it in your bookmark list? What's the name of it? After 10 minutes searching, you will feel depressed if you cannot really find it. Or one day you think out a brilliant idea, but after a month, you forget about it and you may forget it forever. Yes, you need a tool to help you to avoid this kind of annoying situations.
