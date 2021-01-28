@@ -4,7 +4,7 @@ title:  "Message Queue Introduction - Kafka"
 author: devfans
 categories: [ MessageQueue, Kafka ]
 image: /static.livefeed.cn/static/blog/mq-app.png
-tags: [featured]
+tags: [sticky]
 ---
 ### 消息队列简介
 消息队列的应用场景非常多，Kafka作为一款成熟的解决方案，在很多公司的业务中应用十分广泛。
