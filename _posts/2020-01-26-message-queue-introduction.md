@@ -27,7 +27,7 @@ Redis作为常用的内存服务器，支持多种数据类型，其中List可�
 The max length of a list is 232 - 1 elements (4294967295, more than 4 billion of elements per list).
 
 ##### Redis Pub/Sub
-基于发布订阅的redis pubsub功能提供了基于channel和pattern的事件订阅，可以作为即时消息发布，不适合作为队列。
+基于发布订阅的redis pubsub功能提供了基于channel和pattern的事件订阅，可以作为即时消息发布或即时事件订阅，不适合作为队列。
 
 ##### ActiveMQ
 ActiveMQ是一款老牌的消息队列，支持多种协议，由于ActiveMQ不适合超高吞吐量的业务，使用任务在逐渐减少
@@ -87,12 +87,21 @@ Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区�
   + Coordinator宕机
   + Broker宕机
   + 分区改变
-
+  
+##### Kafka 消息事务性 
+Kafka支持事务消息， 通过
+  - initTransaction
+  - beginTransaction
+  - sendOffSetToTransaction
+  - commitTransaction
+  - send
+  - abortTransaction
+  可以执行事务性操作
 
 #### Kafka主要缺憾
 
 ##### 需要预先规划分区，扩容时需要耗时复制分区数据
-扩容手段就是加分区，加单机资源，单个消费者加多线程
+扩容手段就是加分区，加单机资源，单个消费者加多线程，或者采用临时Topic进行短时高流量扩容
 
 ##### Topic消费者数量不能多于分区数量
 没办法
