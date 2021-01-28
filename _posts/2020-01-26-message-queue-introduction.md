@@ -3,7 +3,7 @@ layout: post
 title:  "Message Queue Introduction - Kafka"
 author: devfans
 categories: [ MessageQueue, Kafka ]
-image: /static.livefeed.cn/static/blog/communication-connection-data-162622-min.jpg
+image: /static.livefeed.cn/static/blog/mq-app.png
 tags: [featured]
 ---
 ### 消息队列简介
@@ -17,9 +17,10 @@ tags: [featured]
 
 说白了就是把需要处理的逻辑可以用消息队列把面向前台的业务解耦，从而隔断前端流量，添加缓冲区使业务得到异步延迟处理。
 
-/图 
 
 #### 常见消息中间件
+
+![mq-vs](https://static.livefeed.cn/static/blog/mq-vs.png)
 
 ##### Redis List
 Redis作为常用的内存服务器，支持多种数据类型，其中List可以用作常用简单的消息队列。由于Redis的数据操作具有原子性，可以同时可以有多个生产者和消费者操作同一个List。消费者消息处理失败后可以再次把消息放入queue中等待下次处理。
@@ -87,6 +88,9 @@ Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区�
   + Coordinator宕机
   + Broker宕机
   + 分区改变
+  
+![mq-vs](https://static.livefeed.cn/static/blog/mq-cg-threading.png)
+
   
 ##### Kafka 消息事务性 
 Kafka支持事务消息， 通过
