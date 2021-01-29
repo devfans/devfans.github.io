@@ -107,5 +107,30 @@ func (g *CoGroup) run(f func(context.Context) error) {
 
 ```
 
-消息
-消息等待
+任务等待等任务执行结果全部反馈后退出，同时会实现关闭入口。
+
+```
+func (g *CoGroup) Wait() {
+	g.Lock()
+	g.open = false
+	n := g.jobs
+	g.Unlock()
+	go func() {
+		defer close(g.ch)
+		for i := 0; i < n; i++ {
+			select {
+			case <-g.done:
+			case <-g.Done():
+				xlog.Warn("Coroutine group was canceled!")
+				return
+			}
+		}
+		xlog.Info("Coroutine group was finished!")
+	}()
+
+	g.wg.Wait()
+}
+
+```
+
+该包已放入Github仓库，引入地址：github.com/devfans/cogroup
