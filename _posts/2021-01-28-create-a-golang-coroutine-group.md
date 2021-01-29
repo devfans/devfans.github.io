@@ -34,5 +34,52 @@ Golang中的errgroup包可以做一些任务控制，但并未做并发控制，
 - 任务可以无序执行
 - 任务执行结果可以忽略，但需要捕获panic，防止任务中止
 - 任务中操作最好保持数据一致性，不要中途无序中止
-- 上游Context触发取消时，任务获取可以中止，尚在队列中的任务可以放弃，但执行中的任务需要继续执行
-- 上游Context触发取消时，任务获取可以中止，尚在队列中的任务可以放弃，但执行中的任务需要执行
+- 上游Context触发取消时，任务获取可以中止，尚在队列中的任务可以放弃，但执行中的任务需要继续执行完成
+- 如果没有取消，则需等待任务全部执行完成
+
+
+### 上代码：
+
+```
+
+type CoGroup struct {
+	context.Context
+	wg   sync.WaitGroup
+	ch   chan func(context.Context) error // Task chan
+	sink bool                             // Use group context or not
+	open bool                             // Open signal
+	jobs int
+	done chan bool // Close chan for draining
+	sync.Mutex
+}
+
+
+```
+context又上游控制，wg用来等待全部线程退出，任务放在channel里，open作为队列是否仍开放的标志。jobs进行任务计数，done channel用来做任务执行反馈计数。
+
+```
+func (g *CoGroup) start(n int) {
+	for i := 0; i < n; i++ {
+		g.wg.Add(1)
+		go g.process()
+	}
+}
+
+func (g *CoGroup) process() {
+	defer g.wg.Done()
+	for {
+		select {
+		case f, ok := <-g.ch:
+			if !ok {
+				return
+			}
+			g.run(f)
+		case <-g.Done():
+			return
+		}
+	}
+}
+
+```
+
+任务开始开始
