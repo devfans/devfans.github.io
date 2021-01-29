@@ -82,4 +82,30 @@ func (g *CoGroup) process() {
 
 ```
 
-任务开始开始
+任务开始会启动线程池，等待任务队列。任务完成后进行结果反馈。如果context触发取消，则不再获取新的任务（下方Wait中有channel关闭操作，中止任务获取）。
+```
+func (g *CoGroup) run(f func(context.Context) error) {
+	defer func() {
+		if r := recover(); r != nil {
+			err := make([]byte, 200)
+			err = err[:runtime.Stack(err, false)]
+			xlog.Errorf("CoGroup panic captured %v %s", r, err)
+		}
+	}()
+
+	if g.sink {
+		f(g)
+	} else {
+		f(context.Background())
+	}
+	go func() {
+		g.done <- true
+	}()
+	return
+}
+
+
+```
+
+消息
+消息等待
