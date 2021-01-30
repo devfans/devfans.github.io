@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Create A Golang Coroutine Group 手撸Golang协程并发器"
+title:  "Create A Golang Coroutine Group 手撸一个Golang协程并发器"
 author: devfans
 categories: [ errgroup, golang, coroutine ]
 image: /static.livefeed.cn/static/blog/mq-app.png
 tags: [sticky]
 ---
 
-业务中经常要处理一批任务需要多线程处理，这时如何有效的控制任务执行细节和线程并发就变的很重要。因为大家都造了很多轮子，来，我也造一个！
+业务中经常要处理一批任务需要多线程处理，这时如何有效的控制任务执行细节和线程并发就变的很重要。因此，大家都造了很多轮子，来，我也造一个！
 
 ### 并发控制器主要思考点
 
@@ -43,19 +43,15 @@ Golang中的errgroup包可以做一些任务控制，但并未做并发控制，
 ```
 
 type CoGroup struct {
-	context.Context
+	ctx context.Context
 	wg   sync.WaitGroup
 	ch   chan func(context.Context) error // Task chan
 	sink bool                             // Use group context or not
-	open bool                             // Open signal
-	jobs int
-	done chan bool // Close chan for draining
-	sync.Mutex
 }
 
 
 ```
-context又上游控制，wg用来等待全部线程退出，任务放在channel里，open作为队列是否仍开放的标志。jobs进行任务计数，done channel用来做任务执行反馈计数。
+context又上游控制，wg用来等待全部线程退出，任务放在channel里。
 
 ```
 func (g *CoGroup) start(n int) {
@@ -65,42 +61,48 @@ func (g *CoGroup) start(n int) {
 	}
 }
 
+// Start a single coroutine
 func (g *CoGroup) process() {
 	defer g.wg.Done()
 	for {
 		select {
-		case f, ok := <-g.ch:
-			if !ok {
+		case <-g.ctx.Done():
+			return
+		default:
+			select {
+			case f, ok := <-g.ch:
+				if !ok {
+					return
+				}
+				g.run(f)
+			case <-g.ctx.Done():
 				return
 			}
-			g.run(f)
-		case <-g.Done():
-			return
 		}
 	}
 }
+
 
 ```
 
 任务开始会启动线程池，等待任务队列。任务完成后进行结果反馈。如果context触发取消，则不再获取新的任务（下方Wait中有channel关闭操作，中止任务获取）。
 ```
+
+// Execute a single task
 func (g *CoGroup) run(f func(context.Context) error) {
 	defer func() {
 		if r := recover(); r != nil {
 			err := make([]byte, 200)
 			err = err[:runtime.Stack(err, false)]
-			xlog.Errorf("CoGroup panic captured %v %s", r, err)
+			fmt.Printf("CoGroup panic captured %v %s\n", r, err)
 		}
 	}()
 
 	if g.sink {
-		f(g)
+		f(g.ctx)
 	} else {
 		f(context.Background())
 	}
-	go func() {
-		g.done <- true
-	}()
 	return
 }
 
@@ -110,26 +112,19 @@ func (g *CoGroup) run(f func(context.Context) error) {
 任务等待等任务执行结果全部反馈后退出，同时会实现关闭入口。
 
 ```
-func (g *CoGroup) Wait() {
-	g.Lock()
-	g.open = false
-	n := g.jobs
-	g.Unlock()
-	go func() {
-		defer close(g.ch)
-		for i := 0; i < n; i++ {
-			select {
-			case <-g.done:
-			case <-g.Done():
-				xlog.Warn("Coroutine group was canceled!")
-				return
-			}
-		}
-		xlog.Info("Coroutine group was finished!")
-	}()
-
+// Wait till the tasks in queue are all finished, or the group was canceled by the context.
+func (g *CoGroup) Wait() int {
+	close(g.ch)
 	g.wg.Wait()
+	return len(g.ch)
 }
+
+// Reset the cogroup, it will call the group `Wait` first before do a internal reset.
+func (g *CoGroup) Reset() {
+	g.Wait()
+	g.ch = make(chan func(context.Context) error, cap(g.ch))
+}
+
 
 ```
 
