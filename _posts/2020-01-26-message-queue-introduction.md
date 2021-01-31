@@ -89,8 +89,47 @@ Kafka Broker中会选举一个作为Controller, 由Controller指定各个分区�
   + Broker宕机
   + 分区改变
   
-![mq-vs](https://static.livefeed.cn/static/blog/mq-cg-threading.png)
+sarama 客户端消费者组样例：
+```
+	xlog.Infof("Starting consumer loop for %s", c.Name)
+	c.Wg.Add(1)
+	defer c.Wg.Done()
 
+	g := cogroup.Start(sess.Context(), uint(c.Procs), uint(c.Batch), false)
+	var last *sarama.ConsumerMessage
+
+	done := false
+	for {
+		select {
+		case msg, ok := <-ch:
+			if ok {
+				last = msg
+				if g.Insert(func(ctx context.Context) error { return c.Handler(ctx, msg) }) {
+					sess.MarkOffset(msg.Topic, msg.Partition, msg.Offset-int64(g.Size()), "")
+				}
+			} else {
+				done = true
+			}
+		case <-c.sess.Done():
+			xlog.Info("Consumer exits for session refresh")
+			done = true
+		}
+		if done {
+			break
+		}
+	}
+
+	size := g.Wait()
+	if last != nil {
+		offset := last.Offset - int64(size)
+		sess.MarkOffset(last.Topic, last.Partition, offset, "")
+	}
+	return nil
+
+
+```
+消费loop中不断从broker获取消息，之后放入task队列知道task队列满暂停获取新的消息。当队列有空间时继续获取。任务入queue后会进行一次任务执行进展检查，并前移offset标志位。
+如果发生context取消，则放弃循环，等待正在执行的任务结束之后，进行最后的offset提交。
   
 ##### Kafka 消息事务性 
 Kafka支持事务消息， 通过
