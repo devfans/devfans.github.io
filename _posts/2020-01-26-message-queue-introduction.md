@@ -130,6 +130,7 @@ sarama 客户端消费者组样例：
 ```
 消费loop中不断从broker获取消息，之后放入task队列知道task队列满暂停获取新的消息。当队列有空间时继续获取。任务入queue后会进行一次任务执行进展检查，并前移offset标志位。
 如果发生context取消，则放弃循环，等待正在执行的任务结束之后，进行最后的offset提交。
+其中用到了并发控制器 `github.com/devfans/cogroup` 
   
 ##### Kafka 消息事务性 
 Kafka支持事务消息， 通过
