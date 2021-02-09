@@ -4,7 +4,7 @@ title:  "Setup a blog site on github with Jekyll"
 author: devfans
 categories: [ Jekyll, tutorial ]
 image: /static.livefeed.cn/static/blog/TZHYCANBO9.jpg
-tags: [featured]
+tags: []
 ---
 
 It's never too late to make yourself a personal blog site, as long as you would like to spend sometime on some writings for someone else to take a look when they are searching about the things you are sharing. I am saying this to myself when I decided to setup this site and write this blog as the first post on the site(https://blog.devfans.io).
