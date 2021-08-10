@@ -10,7 +10,7 @@ gitalk:
     enable: true
     owner: devfans
     repo: devfans.github.io
-    clientID: 9defe950e56a5290d962
+    clientID: d8513f907857f4dc38cc
     admin: devfans
 email: 'stefanliu@outlook.com'
 #mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
