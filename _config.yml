@@ -4,10 +4,10 @@ description: 'Personal blog of Stefan Liu (devfans@github)'
 logo: '/static.livefeed.cn/static/blog/devfans.jpeg'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
-# disqus: 'devfans-blog'
-# disqus_username: stefanliu
+disqus: 'devfans-blog'
+disqus_username: stefanliu
 gitalk:
-    enable: true
+    enable: false
     owner: devfans
     repo: devfans.github.io
     clientID: d8513f907857f4dc38cc
