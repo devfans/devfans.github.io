@@ -13,7 +13,7 @@ The vulnerable function is:
 ```
     function verifyHeaderAndExecuteTx(bytes memory proof, bytes memory rawHeader, bytes memory headerProof, bytes memory curRawHeader,bytes memory headerSig) whenNotPaused public returns (bool)
 ```
-https://github.com/polynetwork/eth-contracts/blob/master/contracts/core/cross_chain_manager/logic/EthCrossChainManager.sol
+`https://github.com/polynetwork/eth-contracts/blob/master/contracts/core/cross_chain_manager/logic/EthCrossChainManager.sol`
 
 
 The initial design of the contract metioned here is to serve as message bus to decouple the biz details from the cross chain infrastructure, which leads to the case the target contract address and method is not limited in the function body. However, the only desired usage is to call the proxy contract to unlock the wrapped assets. With this door, the hacker called the cross chain data contract:
@@ -22,7 +22,7 @@ The initial design of the contract metioned here is to serve as message bus to d
     function putCurEpochConPubKeyBytes(bytes memory curEpochPkBytes) public whenNotPaused onlyOwner returns (bool) 
 
 ```
-https://github.com/polynetwork/eth-contracts/blob/master/contracts/core/cross_chain_manager/data/EthCrossChainData.sol#L45
+`https://github.com/polynetwork/eth-contracts/blob/master/contracts/core/cross_chain_manager/data/EthCrossChainData.sol#L45`
 
 The poly project is using multi-sig validators to authorize valid transactions to be fullfilled, however this public method is open to the cross chain manager contract(the first one), so the hacker with this way changed the book keepers in the target chain storage, which leads to the proxy contract fully open to the hacker to unlock any assets. 
 
