@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Aug 10 PolyNetwork Hack Explained"
+title:  "Aug 10 PolyNetwork Hack Explained | $600M"
 author: devfans
 categories: [ hack, PolyNetwork ]
 image: /static.livefeed.cn/static/blog/poly-hack.jpg
@@ -43,7 +43,7 @@ And it's rumor that if someone says a big backdoor was kept by the project.
 
 P.S.
 
-There's indeed another protection for the UNLIMITED method calls, but it has some defect which leads to a not hard has collision.
+There's indeed another protection for the UNLIMITED method call, but it has some defect which leads to a not hard hash collision attack.
 
 
 
