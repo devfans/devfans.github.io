@@ -4,7 +4,7 @@ title:  "Aug 10 PolyNetwork Hack Explained | $600M"
 author: devfans
 categories: [ hack, PolyNetwork ]
 image: /static.livefeed.cn/static/blog/poly-hack.jpg
-tags: [sticky]
+tags: [featured]
 ---
 
 It's a big shock that the PolyNetwork was attacked by a hacker with a loss about 600M dollars. I endorsed this project, and trust the fundamental cross chain solutions which was built with bunch of solidity smart contracts. I was spending some time to check the detailed procedure and trying to find any possible vulnerabilites, but no I didnt figure that out. That's why I trust the project so much. So it's been a bit ashamed it's hacked and this hack left a siginificant attack in DEFI society. Here's to explain the path the hack was using to steal the assets.
