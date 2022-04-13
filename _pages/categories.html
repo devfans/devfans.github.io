@@ -18,6 +18,7 @@ permalink: "/categories.html"
           {% if group == null or group == post.group %}
          
             {% include main-loop-card.html %}
+            <span class="btn-sm btn">PV <img src="https://profile-counter.glitch.me/{{post.url}}/count.svg" style="width:7em" /></span>
           {% endif %}
         {% endif %}
         {% endfor %}
