@@ -16,9 +16,9 @@ permalink: "/categories.html"
         {% for post in pages_list %}
         {% if post.title != null %}
           {% if group == null or group == post.group %}
-         
+            <div class="btn-sm btn cate-post-pv">PV <img src="https://profile-counter.glitch.me/{{post.url}}/count.svg" style="width:7em" /></div>
             {% include main-loop-card.html %}
-            <span class="btn-sm btn">PV <img src="https://profile-counter.glitch.me/{{post.url}}/count.svg" style="width:7em" /></span>
+
           {% endif %}
         {% endif %}
         {% endfor %}
