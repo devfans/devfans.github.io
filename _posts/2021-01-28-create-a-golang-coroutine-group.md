@@ -4,7 +4,7 @@ title:  "Create A Golang Coroutine Group 手撸一个Golang协程并发器"
 author: devfans
 categories: [ errgroup, golang, coroutine ]
 image: /static.livefeed.cn/static/blog/cogroup.jpg
-tags: [featured]
+tags: [sticky]
 ---
 
 业务中经常要处理一批任务需要多线程处理，这时如何有效的控制任务执行细节和线程并发就变的很重要。因此，大家都造了很多轮子，来，我也造一个！
