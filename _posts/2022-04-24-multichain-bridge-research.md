@@ -2,7 +2,7 @@
 layout: post
 title:  "Multichain Bridge Research"
 author: devfans
-categories: [ Multichain, Anyswap, BlockChain, Bridge ]
+categories: [ Multichain, Anyswap, BlockChain, Bridge, Research]
 image: /static.livefeed.cn/static/blog/multichain.png
 tags: [sticky]
 ---

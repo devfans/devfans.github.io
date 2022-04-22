@@ -2,9 +2,9 @@
 layout: post
 title:  "Celer Bridge Research"
 author: devfans
-categories: [ cBridge, BlockChain, Bridge ]
+categories: [ cBridge, BlockChain, Bridge, Research ]
 image: /static.livefeed.cn/static/blog/cbridge.png
-tags: []
+tags: [featured, bridge]
 ---
 
 Recently, I did some researches on some existing popular cross chain bridges, here to dump them on the blog with three pages, for Celer Bridge, Connext, MultiChain respectively.
