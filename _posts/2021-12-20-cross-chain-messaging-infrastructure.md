@@ -4,7 +4,7 @@ title:  "Cross Chain Messaging Infrastructure"
 author: devfans
 categories: [ CrossChain, BlockChain, Bridge ]
 image: /static.livefeed.cn/static/blog/ccm.jpg
-tags: [sticky]
+tags: [featured]
 ---
 
 Cross chain asset tranfer functionality (aka bridging) becomes more and more important as blockchain's foastering more and more hot concepts like DEFI, NFT, DEX, etc. Advanced users are getting familar with cross chain bridges, comparing the efficiency and fee cost. With seeing more requirements, several great bridge/swap tools become popular and attract more users to lock assets on their contracts. 
