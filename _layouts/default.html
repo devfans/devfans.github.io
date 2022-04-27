@@ -60,7 +60,16 @@
     <main role="main" class="site-content">
         {{ content }}
     </main>
-    
+    <script>
+      function addCSSClass (el, _class) {
+        if (el.className.split(' ').indexOf(_class) === -1) el.className += ' ' + _class;
+      }
+        if (/mobile/i.test(window.navigator.userAgent) || typeof window.orientation !== 'undefined') {
+          ['nav', 'main', 'article'].forEach(d => {
+              document.querySelectorAll(d).forEach(el => addCSSClass(el, 'mobile'));
+            });
+        }
+    </script>
     <!-- Footer -->
     <footer class="bg-white border-top p-3 text-muted small">
         <div class="container">
@@ -88,15 +97,6 @@
 
 
     {% include tracking-footer.html %}
-    <script>
-      window.$mobile = /mobile/i.test(window.navigator.userAgent) || typeof window.orientation !== 'undefined';
-      function addCSSClass (el, _class) {
-        if (el.className.split(' ').indexOf(_class) === -1) el.className += ' ' + _class;
-      }
-      ['nav', 'main', 'article'].forEach(d => {
-          document.querySelectorAll(d).forEach(el => addCSSClass(el, 'mobile'));
-        });
-    </script>
 
 </body>
 
