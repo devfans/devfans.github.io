@@ -64,7 +64,7 @@
       function addCSSClass (el, _class) {
         if (el.className.split(' ').indexOf(_class) === -1) el.className += ' ' + _class;
       }
-        if (/mobile/i.test(window.navigator.userAgent) || typeof window.orientation !== 'undefined') {
+        if (/mobile/i.test(window.navigator.userAgent) || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           ['nav', 'main', 'article'].forEach(d => {
               document.querySelectorAll(d).forEach(el => addCSSClass(el, 'mobile'));
             });
