@@ -11,6 +11,39 @@ span#total-pv {
     padding-left: 20px;
 }
 
+main.mobile {
+  width: 100%;
+}
+
+main.mobile>div {
+  padding: 0rem 2rem !important;
+}
+
+navbar.navbar.mobile {
+  padding: 0rem 2rem !important;
+}
+
+article.mobile {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  font-size: 1rem !important;
+  font-feature-settings: "kern","liga","clig","calt" !important;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol !important;
+  font-kerning: normal !important;
+  font-weight: 400 !important; 
+}
+
+article.mobile img {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+article.mobile p, article.mobile span {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
 :root {
   --blue: #7832e2;
   --indigo: #502c6c;
