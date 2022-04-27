@@ -3,16 +3,21 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140795020-1"></script>
 <script>
   window.$mobile = /mobile/i.test(window.navigator.userAgent) || typeof window.orientation !== 'undefined';
-  const addCSSClass = (el, _class) => {
+  function addCSSClass (el, _class) {
     if (el.className.split(' ').indexOf(_class) === -1) el.className += ' ' + _class;
+  }
+  function setMobile() {
+    ['nav', 'main', 'article'].forEach(d => {
+      document.querySelectorAll(d).forEach(el => addCSSClass(el, 'mobile'));
+    })
   }
   window.addEventListener("load", (event) => {
     if (window.$mobile) {
-      setImmediate(function() {
-        ['nav', 'main', 'article'].forEach(d => {
-          document.querySelectorAll(d).forEach(el => addCSSClass(el, 'mobile'));
-        })
-      });
+      if (typeof setImmediate == 'function' ) {
+        setImmediate(setMobile);
+      } else {
+        setMobile();
+      }
     }
   });
   window.dataLayer = window.dataLayer || [];
