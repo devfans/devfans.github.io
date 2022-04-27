@@ -633,6 +633,9 @@ ol.list-featured li:before {
     line-height: 1;
     opacity: .1;
 }
+ol.list-featured li:nth-child(n+10):before {
+	content: counter(my-awesome-counter) !important;
+}
 .catlist .sep:last-child {
 	display:none;
 }
