@@ -17,6 +17,7 @@ email: 'stefanliu@outlook.com'
 
 include: ["_pages"]
 permalink: /:title/
+future: true
 
 # Plugins
 plugins: 
