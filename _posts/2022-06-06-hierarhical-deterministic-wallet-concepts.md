@@ -19,7 +19,7 @@ Then, more ideas came out to form the HD(Hierarhical Deterministic) wallet conce
 
 
 
-Despite of the time of proposals, here's to describe the main idea from mnemonic worlds to leaf accounts.
+Despite of the time of proposals, here's to describe the main idea from mnemonic words to leaf accounts.
 
 
 In [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) the idea behind generating a wallet:
