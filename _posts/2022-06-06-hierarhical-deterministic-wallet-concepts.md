@@ -7,9 +7,9 @@ image: /static.livefeed.cn/static/blog/hd-wallet.webp
 tags: [sticky]
 ---
 
-Crypto wallet account works as the main and only(mostly) access identity for user of blockchains, that means each user has to maintain a crypto wallet, normally holding a private key in it, or multiple sometimes. Private keys are normally random bytes with a strict size. So how to let users keep them easily and safely? And for Bitcoin, it's preferred to generate an account and throw it away after it's spent, next time to generate a new one. For centralized exchanges, the enterprise needs to keep a unique receiver address for each user & token. To cope with these troubles, some proposals came out with good ideas.
+Crypto wallet account works as the main and only(mostly) access identity for users of blockchains, that means each user has to maintain a crypto wallet, normally holding a private key in it, or multiple sometimes. Private keys are normally random bytes with a strict size. So how to let users keep them easily and safely? And for Bitcoin, it's preferred to generate an account and throw it away after it's spent, next time to generate a new one. For centralized exchanges, the enterprise needs to keep a unique receiver address for each user & token. To cope with these troubles, some proposals came out with good ideas.
 
-Early days of Bitcoin, some wallet will generate a batch of standalone private keys and keep them in the wallet, it's the simplest way, but not propal to manage when scaling up. Called as random or non-deterministic wallet.
+Early days of Bitcoin, some wallet will generate a batch of standalone private keys and keep them in the wallet, it's the simplest way, but not proper to manage when scaling up. Called as random or non-deterministic wallet.
 
 Some wallet adopted to generate a seed, and compute the seed with account index to generate the private key, sounds good, called as sequential deterministic wallet.
 
@@ -19,7 +19,7 @@ Then, more ideas came out to form the HD(Hierarhical Deterministic) wallet conce
 
 
 
-Despite of the time of propsals, here's to describe the main idea from mnemonic worlds to leaf accounts.
+Despite of the time of proposals, here's to describe the main idea from mnemonic worlds to leaf accounts.
 
 
 In [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) the idea behind generating a wallet:
@@ -28,9 +28,9 @@ In [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) the i
 
 - With strict ENT(Entropy size) and CS(Check Sum), result in the length of MS(Mnemonic Sentence)
 
-- With a ideal word list mapping bytes to words, then we have the mnemonic sentence.
+- With an ideal word list mapping bytes to words, then we have the mnemonic sentence.
 
-- So with such a sentence and option passphrase, do HMAC-SHA512 computations will generate a seed in 512 bits.
+- So with such a sentence and optional passphrase, do HMAC-SHA512 computations will generate a seed in 512 bits.
 
 
 ```
@@ -77,7 +77,7 @@ Here:
 - `change` normally only useful to indicate bitcoin change addresses(internal) or a payout address
 
 
-To sum things up, HD wallet concepts formed a better way for accounts management, which powers user to derive tons of public keys without the need to maintain private keys for each. With a hierarchical schema, the wallet becomes versatile. With hardened derviation prohibits some possible behavior tracking. 
+To sum things up, HD wallet concepts formed a better way for accounts management, which powers user to derive tons of public keys without the need to maintain private keys for each. With a hierarchical schema, the wallet becomes versatile and with hardened derviation to prohibit some possible behavior tracking. 
 
 
 
