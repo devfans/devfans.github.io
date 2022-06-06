@@ -4,7 +4,7 @@ title:  "Connext Bridge Research"
 author: devfans
 categories: [ Connext, BlockChain, Bridge, Research ]
 image: /static.livefeed.cn/static/blog/connext.png
-tags: [ sticky ]
+tags: [ featured ]
 ---
 
 Recently, I did some researches on some existing popular cross chain bridges, here to dump them on the blog with three pages, for Celer Bridge, Connext, MultiChain respectively.
