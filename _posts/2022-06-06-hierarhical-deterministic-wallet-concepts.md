@@ -62,6 +62,12 @@ In [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) the i
 
 - Use same steps to generate further children.
 
+From the derviation logic, we call know some properties like:
+
+- Child private key was an addition to parent private key, so if using non-hardened derviation, and parent public key gets exposed along with parent chain code (that means the extended parent public key gets leaked), it wont be hard to find the parent private key.
+
+- Also, when extended parent public key gets exposed, it'll be easy to calculate the child public keys, and the ones of further grand children, making behavior tracking possible.
+
 
 In [BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki), the schema is more comprehensive.
 
