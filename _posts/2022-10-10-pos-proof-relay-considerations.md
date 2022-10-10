@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "PoS Proof Relay"
+title:  "PoS Proof Relay Considerations"
 author: devfans
 categories: [ crosschain, PoS ]
 image: https://sloanreview.mit.edu/wp-content/uploads/2018/11/FL-Ready-Trust-Leadership-2400-300x300.jpg
 tags: [featured]
 ---
-
-### Bakcground
 
 When PoS network gets big and more decentralized, the validator size will increase a lot. To maintain a light chain on side chain for proof relays, the cost will increase along. Here to describe some considerations for the moment.
 
