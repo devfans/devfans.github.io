@@ -4,7 +4,7 @@ title:  "Hierarchical Deterministic Wallet Concepts"
 author: devfans
 categories: [ Crypto, Wallet ]
 image: /static.livefeed.cn/static/blog/hd-wallet.webp
-tags: [sticky]
+tags: [featured]
 ---
 
 Crypto wallet account works as the main and only(mostly) access identity for users of blockchains, that means each user has to maintain a crypto wallet, normally holding a private key in it, or multiple sometimes. Private keys are normally random bytes with a strict size. So how to let users keep them easily and safely? And for Bitcoin, it's preferred to generate an account and throw it away after it's spent, next time to generate a new one. For centralized exchanges, the enterprise needs to keep a unique receiver address for each user & token. To cope with these troubles, some proposals came out with good ideas.

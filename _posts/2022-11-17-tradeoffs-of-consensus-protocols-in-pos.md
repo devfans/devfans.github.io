@@ -3,8 +3,8 @@ layout: post
 title:  "Trade-Offs of Consensus Protocols in PoS"
 author: devfans
 categories: [ Blockchain ]
-image: /static.livefeed.cn/static/blog/cryptographic.jpeg
-tags: [ Consenus, Blockchain, PoS, BFT ]
+image: /static.livefeed.cn/static/blog/consensus.png
+tags: [ sticky, Consenus, Blockchain, PoS, BFT ]
 ---
 
 
