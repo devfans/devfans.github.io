@@ -3,7 +3,7 @@ layout: post
 title:  "Understanding signatures in Ethereum"
 author: devfans
 categories: [ Crypto ]
-image: /static.livefeed.cn/static/blog/cryptographic.jpeg
+image: //static.livefeed.cn/static/blog/cryptographic.jpeg
 tags: [ ecdsa, bls, schnorr, signature, ethereum ]
 ---
 
@@ -18,7 +18,7 @@ Here's to describe how these signatures were designed.
 
 Elliptic Curve Digital Signature Algorithm or ECDSA is a cryptographic algorithm used by Bitcoin, Ethereum and some other Blockhains. It is dependent on the curve order and hash function used. Typically `Secp256k1` and `SHA256` respectively.  
 
-![ecdsa-signature-design](/static.livefeed.cn/static/blog/ecdsa.png)
+![ecdsa-signature-design](//static.livefeed.cn/static/blog/ecdsa.png)
 
 `secp256k1` define the curve *E*: *y2 = x3+ax+b* over F*p* as:
 
@@ -80,7 +80,7 @@ Schnorr signature changes variable z, r and s as:
 - R = k x G
 - s = k + z x d
 
-![schnorr-signature-design](/static.livefeed.cn/static/blog/schnorr.png)
+![schnorr-signature-design](//static.livefeed.cn/static/blog/schnorr.png)
 
 
 Signature design
@@ -118,7 +118,7 @@ However, the signature requires to map the message to point on the curve, so we 
 - Q = d x G
 
 
-![bls-signature-design](/static.livefeed.cn/static/blog/bls.png)
+![bls-signature-design](//static.livefeed.cn/static/blog/bls.png)
 
 ### Signature design
 

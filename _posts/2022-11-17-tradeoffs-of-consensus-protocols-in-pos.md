@@ -3,7 +3,7 @@ layout: post
 title:  "Trade-Offs of Consensus Protocols in PoS"
 author: devfans
 categories: [ Blockchain ]
-image: /static.livefeed.cn/static/blog/consensus.png
+image: //static.livefeed.cn/static/blog/consensus.png
 tags: [ sticky, Consenus, Blockchain, PoS, BFT ]
 ---
 
@@ -27,7 +27,7 @@ I read some papers on these kinds of protocols adopted for PoS chains, here's to
 
 PBFT has three phases: pre-prepare, prepare and commit. The first two are used to order requests in the same view even when the proposer is faulty. For blockchains, a request means a new block with a height n. The last two are used to ensure the requests that commit are ordered across views.
 
-![pbft-diagram](/static.livefeed.cn/static/blog/pbft.png)
+![pbft-diagram](//static.livefeed.cn/static/blog/pbft.png)
 
 #### Safety:
 
@@ -53,7 +53,7 @@ All replicas need to broadcast messages, for a normal case, the burden is O(n^2)
 
 Assumes the network is partially synchronous, which has some unknown upper bound on the time of the messages to be delivered. A block is said to be committed by the network when a 2/3 majority of validators had signed and broadcast commits for that block.
 
-![tendermint-diagram](/static.livefeed.cn/static/blog/tendermint.png)
+![tendermint-diagram](//static.livefeed.cn/static/blog/tendermint.png)
 
 #### Safety:
 
@@ -76,7 +76,7 @@ All replicas need to broadcast messages to the neighbors, for a normal case, the
 
 Resolves around a three-phase core, introduce a second phase to allow replicas to change their mind after voting without a leader proof required. After GST, the correct leader sends only O(n) authenticators to drive a consensus decision(Linear View Change), O(n^2) at worst case. In addition, the leader needs to wait just for the first n - f responses to guarantee it can create a proposal that will make progress(Optimistic Responsiveness).
 
-![basichotstuff-diagram](/static.livefeed.cn/static/blog/basic_hotstuff.png)
+![basichotstuff-diagram](//static.livefeed.cn/static/blog/basic_hotstuff.png)
 
 #### Safety:
 
@@ -105,7 +105,7 @@ Assumes there is a fixed set of validators and a proposal mechanism, and a major
 
 Casper's FFG has two fundamental properties: accountable safety and plausible liveness. The first ensures two conflicting checkpoints won't be both finalized unless there are 1/3 of the validators slashed. the latter ensures when at least 2/3 of validators follow the protocol, there's always possible to reach a consensus.
 
-![casperffg-diagram](/static.livefeed.cn/static/blog/casperffg.png)
+![casperffg-diagram](//static.livefeed.cn/static/blog/casperffg.png)
 
 #### Safety:
 
