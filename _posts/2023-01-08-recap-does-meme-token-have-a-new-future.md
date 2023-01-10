@@ -3,7 +3,7 @@ layout: post
 title:  "Recap - Does MEME token have a new future"
 author: devfans
 categories: [ Blockchain ]
-image: //static.livefeed.cn/static/blog/meme-future.png
+image: //static.livefeed.cn/static/blog/meme-future.jpeg
 tags: [ MEME ]
 ---
 

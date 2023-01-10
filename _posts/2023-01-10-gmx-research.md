@@ -3,7 +3,7 @@ layout: post
 title:  "GMX Research"
 author: devfans
 categories: [ Blockchain ]
-image: //static.livefeed.cn/static/blog/gmx-research.png
+image: //static.livefeed.cn/static/blog/gmx-research.jpeg
 tags: [ featured, GMX, research ]
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "Recap - 《Web3新视界：蓝筹暴跌，交易量萎靡，NFT这个寒冬该怎么过？》"
 author: devfans
 categories: [ Blockchain ]
-image: //static.livefeed.cn/static/blog/winter-of-bluechip-nfts.png
+image: //static.livefeed.cn/static/blog/winter-of-bluechip-nfts.jpeg
 tags: [ NFT ]
 ---
 
