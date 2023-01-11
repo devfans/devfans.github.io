@@ -16,7 +16,7 @@ https://cointelegraph.com/press-releases/opportunities-for-the-cross-chain-bridg
 https://www.theblock.co/post/190083/interoperability-in-ethereum-2-0-cross-chain-to-earn
 
 
-<iframe src="//static.livefeed.cn/static/blog/ethereum-2-cross-chain-to-earn.pdf" width="100%" height="800px">
+<iframe src="//static.livefeed.cn/static/blog/ethereum-2-cross-chain-to-earn.pdf" width="100%" height="100%" scrolling="auto" frameBorder="0">
 </iframe>
 
 
