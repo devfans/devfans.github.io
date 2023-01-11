@@ -9,7 +9,7 @@ tags: [ featured, GMX, research ]
 
 Did a research on GMX project, here's the doc:
 
-<iframe src="//static.livefeed.cn/static/blog/gmx-research.pdf" width="100%" height="1800px">
+<iframe src="//static.livefeed.cn/static/blog/gmx-research.pdf" width="100%" height="800px">
 </iframe>
 
 
